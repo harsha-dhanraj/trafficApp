@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Traffic Lights</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div>
+  <div>
+  <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+         <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li class="active"><a href="/lights">Traffic Lights<span class="sr-only">(current)</span></a></li>
+        
+      </ul>
+</nav>
+</div>
+  <br/>
+  <div class="jumbotron">
+  <p>
+    Traffic Lights Status
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>UUID</th>
+          <th>Area</th>
+        </tr>
+        <tbody>
+          each light in lights
+          <tr>
+            <td>#{light.uuid}</td>
+            <td>#{light.area}</td>
+          </tr>
+        </tbody>
+      </thead>
+    </table>
+  </p>
+</div>
+  </div>
+</body>
+</html>

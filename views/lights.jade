@@ -1,0 +1,37 @@
+html
+  head
+    title Traffic Lights
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
+  body
+    div
+      div
+        nav.navbar.navbar-inverse(role='navigation', style='padding-left:130px;')
+          ul.nav.navbar-nav
+            li
+              a(href='/') Home
+            li.active
+              a(href='/lights')
+                | Traffic Lights
+                span.sr-only (current)
+      br
+      .jumbotron
+        p
+          | Traffic Lights Status
+          table.table.table-bordered
+            thead
+              tr
+                th UUID
+                th Area
+                th Status
+                th Action
+              tbody
+                each light in lights
+                  tr
+                    td #{light.uuid}
+                    td #{light.area}
+                    td #{light.status}
+                    td
+                      a(href='/changeLightStatus/#{light.id}', type='button') Change Status
+
+
