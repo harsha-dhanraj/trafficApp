@@ -13,6 +13,8 @@ var db=mongoose.connections;
 
 var path = __dirname + '/views/';
 
+var threshold = 20;
+
 router.use(function (req,res,next) {
   console.log("/" + req.method);
   next();
@@ -69,23 +71,43 @@ router.get("/changeLightStatus/:_id",function(req,res){
 router.post("/addLight",function(req,res){ 
 	console.log("Comming hereeeee......") 
   var new_light = req.body;
-  console.log("new light req:"+req)
-  Light.addLight(new_light,(err,light)=>{
-    console.log(new_light);
-    if (err){
-        console.error(err);
+  var uuid=new_light.uuid
+  var distance = new_light.distance
+  console.log("new light req:"+uuid)
+  // findOne({_id: req.params["_id"]}
+  Light.findOne({uuid: uuid},function(err,new_light){
+  // Light.findOne({},(err,new_light_)=>{
+    if (new_light.length != 0){
+    		if(distance <= threshold){
+    			new_light.status = "ON"
+    		}else{
+    			new_light.status = "OFF"
+    		}
+    		new_light.save();
         res.json({
+          success:false,
+          msg:"light already registered",
+          light:new_light
+        });
+    }else{
+		  Light.addLight(new_light,(err,light)=>{
+		    console.log(new_light);
+		    if (err){
+	        console.error(err);
+	        res.json({
             success: false,
             msg: "There is some error"
-        });
-    } else {
-        res.json({
+	        });
+		    } else {
+	        res.json({
             success:true,
             msg:"Light registered successfully....",
             light:light
-        })
-    }
-	});
+	        })
+		    }
+			});
+		}
+});
 });
 
 app.use("/",router);
