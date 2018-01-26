@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Traffic Lights</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="script.js"></script>
+</head>
+<body>
+<div>
+<div>
+<nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+       <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+      <li><a href="/lights">Traffic Lights</a></li>
+      
+    </ul>
+</nav>
+</div>
+<br/>
+
+<p>
+	<div id="signupbox" style="margin-top:50px;" class="mainbox col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <div class="panel-title">Sign Up</div>      
+    </div>  
+    <div class="panel-body" >                            
+    <form id="signUpform" action="/register" method="POST" class="form-horizontal" role="form">         
+        <div class="form-group">
+          <label for="name" class="col-md-3 control-label">Name</label>
+          <div class="col-md-9">                                                    
+            <input id="name" type="text" class="form-control" name="name" value="" placeholder="Name", required="true">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="specialization" class="col-md-3 control-label">Specialization</label>
+          <div class="col-md-9">                                                    
+            <input id="specialization" type="text" class="form-control" name="specialization" value="" placeholder="Specialization", required="true">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contact_number" class="col-md-3 control-label">Contact Number</label>
+          <div class="col-md-9">                                                    
+            <input id="contact_number" type="text" class="form-control" name="contact_number" value="" placeholder="Contact Number", required="true">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="col-md-3 control-label">Email</label>
+          <div class="col-md-9">                                                    
+            <input id="email" type="text" class="form-control" name="email" value="" placeholder="Email", required="true">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password" class="col-md-3 control-label">Password</label>
+          <div class="col-md-9">                                                    
+            <input id="password" type="password" class="form-control" name="password" value="" placeholder="Password", required="true">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password" class="col-md-3 control-label">Confirm Password</label>
+          <div class="col-md-9">                                                    
+            <input id="confirm_password" type="password" class="form-control" name="confirm_password" value="" placeholder="Confirm Password", required="true">
+          </div>
+        </div>
+                                                          
+        <div class="form-group">
+          <div class="col-md-offset-3 col-md-9">
+            <!-- <a id="btn-register" class="btn btn-sm btn-primary">Register  </a> -->
+            <input type="submit" value="Register" class="btn btn-sm btn-primary">
+            <a id="btn-back" href="/login" class="btn btn-sm btn-success">Back  </a>
+          </div>
+        </div>                                                              
+      </form>
+    </div>
+  </div>
+</div> 
+</p>
+
+</div>
+</body>
+</html>
