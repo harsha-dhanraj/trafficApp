@@ -1,0 +1,46 @@
+html
+  head
+    title Patients
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+  body
+    div
+      div
+        nav.navbar.navbar-inverse(role='navigation', style='padding-left:130px;')
+          ul.nav.navbar-nav
+            li
+              a(href='/') Home
+            li.active
+              a(href='/patients')
+                | Patients
+                span.sr-only (current)
+      
+        h1 Patients List
+        p
+          table.table.table-bordered
+            thead
+              tr
+                th Name
+                th Suffering From
+                th Personal Contact Number
+                th Emergency Contact Number
+                th Email
+                th Address
+                th Action
+              tbody
+                each patient in patients
+                  tr
+                    td #{patient.name}
+                    td #{patient.suffering_from}
+                    td #{patient.personal_contact_number}
+                    td #{patient.emergency_contact_number}
+                    td #{patient.email}
+                    td #{patient.address}
+                    td
+                      a.btn.btn-sm.btn-info(href='/patients/#{patient._id}/view_ecg_data') View
+                      a.btn.btn-sm.btn-primary(href='/patients/#{patient._id}/edit', style='margin-left:3px;') Edit
+                      a.btn.btn-sm.btn-danger(href='/patients/#{patient._id}/remove_patient', style='margin-left:3px;') Delete                             
+        
+    br
+    a.btn.btn-sm.btn-primary(href='/doctors/#{doctor_id}/register_patient') Add Patient 

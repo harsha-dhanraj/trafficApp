@@ -1,0 +1,39 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title ECG Monitoring
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    script(src='script.js')
+  body
+    div
+      div
+        nav.navbar.navbar-inverse(role='navigation', style='padding-left:130px;')
+          ul.nav.navbar-nav
+            li.active
+              a(href='/')
+                | Home
+                span.sr-only (current)
+            li
+              a(href='/remove_patient') Deletion of Patients
+      br
+      p
+        #signupbox.mainbox.col-md-7.col-md-offset-3.col-sm-8.col-sm-offset-2(style='margin-top:50px;')
+          .panel.panel-info
+            .panel-heading
+              .panel-title Deletion of Patients
+            .panel-body
+              form#signUpform.form-horizontal(action='/remove_patient', method='POST', role='form')
+                input#doctor_id.form-control(type='hidden', name='doctor_id', value='', placeholder='doctor_id', ,='', required='true')
+                .form-group
+                  label.col-md-4.control-label(for='name') Name
+                  .col-md-8
+                    input#name.form-control(type='text', name='name', value='', placeholder='Name', ,='', required='true')
+                .form-group
+                  .col-md-offset-3.col-md-8
+                    // <a id="btn-register" class="btn btn-sm btn-primary">Register  </a>
+                    input.btn.btn-sm.btn-primary(type='submit', value='Delete')
+                    // <a id="btn-back" href="/login" class="btn btn-sm btn-success">Back</a>
+

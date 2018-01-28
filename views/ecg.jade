@@ -1,0 +1,34 @@
+html
+  head
+    title Patients
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+  body
+    div
+      div
+        nav.navbar.navbar-inverse(role='navigation', style='padding-left:130px;')
+          ul.nav.navbar-nav
+            li
+              a(href='/') Home
+            li.active
+              a(href='/patients')
+                | Patients
+                span.sr-only (current)
+      
+        h1 ECG History
+        p
+          table.table.table-bordered
+            thead
+              tr                
+                th Time                
+                th Action
+              tbody
+                each ecg in ecgs                  
+                  tr
+                    td #{ecg._id.getTimestamp()}                    
+                    td
+                      a.btn.btn-sm.btn-info(href='#{ecg.plotly_url}', target='_blank') View Graph
+       
+    br
+    a#btn-back.btn.btn-sm.btn-success(href='/patients', style='margin-left:5px') Back

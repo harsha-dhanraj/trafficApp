@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ECG Monitoring</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="script.js"></script>
+</head>
+<body>
+<div>
+<div>
+<nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+       <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+      <li><a href="/registerpatient">Registration of Patients</a></li>
+      
+    </ul>
+</nav>
+</div>
+<br/> 
+
+<p>
+  <div id="signupbox" style="margin-top:50px;" class="mainbox col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-2">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <div class="panel-title">Register Patient</div>      
+    </div>  
+    <div class="panel-body" >                            
+    <form id="signUpform" action="/registerpatient" method="POST" class="form-horizontal" role="form">   
+        <input id="doctor_id" type="hidden" class="form-control" name="doctor_id" value="5a6adc6a22d7052857fd27db" placeholder="doctor_id", required="true">
+        <div class="form-group">
+          <label for="name" class="col-md-4 control-label">Name</label>
+          <div class="col-md-8">                                                    
+            <input id="name" type="text" class="form-control" name="name" value="" placeholder="Name", required="true">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="suffering_from" class="col-md-4 control-label">Suffering From</label>
+          <div class="col-md-8">                                                    
+            <input id="suffering_from" type="text" class="form-control" name="suffering_from" value="" placeholder="Suffering From", required="true">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="personal_contact_number" class="col-md-4 control-label">Personal Contact Number</label>
+          <div class="col-md-8">                                                    
+            <input id="personal_contact_number" type="text" class="form-control" name="personal_contact_number" value="" placeholder="Personal Contact Number", required="true">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="emergency_contact_number" class="col-md-4 control-label">Emergency Contact Number</label>
+          <div class="col-md-8">                                                    
+            <input id="emergency_contact_number" type="text" class="form-control" name="emergency_contact_number" value="" placeholder="Emergency Contact Number", required="true">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="col-md-4 control-label">Email</label>
+          <div class="col-md-8">                                                    
+            <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email", required="true">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="Address" class="col-md-4 control-label">Address</label>
+          <div class="col-md-8">                                                    
+            <input id="Address" type="Address" class="form-control" name="Address" value="" placeholder="Address", required="true">
+          </div>
+        </div>
+                                                          
+        <div class="form-group">
+          <div class="col-md-offset-3 col-md-8">
+            <!-- <a id="btn-register" class="btn btn-sm btn-primary">Register  </a> -->
+            <input type="submit" value="Register" class="btn btn-sm btn-primary">
+            <a id="btn-back" href="/login" class="btn btn-sm btn-success">Back  </a>
+          </div>
+        </div>                                                              
+      </form>
+    </div>
+  </div>
+</div> 
+</p>
+
+</div>
+</body>
+</html>

@@ -1,1 +1,36 @@
 <h1>Patients List</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th  style="text-align: center;">Name</th>
+      <th  style="text-align: center;">Suffering From</th>
+      <th  style="text-align: center;" nowrap>Personal Contact Number</th>
+      <th  style="text-align: center;">Emergency Contact Number</th>
+      <th  style="text-align: center;">Email</th>
+      <th  style="text-align: center;">Address</th>      
+      <th  style="text-align: center;" colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    each patient in patients
+      <tr>
+        <td nowrap>#{patient.name}</td>
+        <td nowrap>#{patient.suffering_from}</td>
+        <td nowrap>#{patient.personal_contact_number}</td>
+        <td nowrap>#{patient.emergency_contact_number}</td>
+        <td nowrap>#{patient.email}</td>
+        <td nowrap>#{patient.address}</td>                
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    
+  </tbody>
+</table>
+
+<br>
+<a href="/register" class="btn btn-sm btn-primary">Add Patient </a>
+<a href="/remove_patient" class="btn btn-sm btn-primary">Delete Patient </a>
+

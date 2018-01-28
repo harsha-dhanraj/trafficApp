@@ -1,0 +1,58 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Edit Patients
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css')
+    script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js')
+    link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    script(src='script.js')
+  body
+    div
+      div
+        nav.navbar.navbar-inverse(role='navigation', style='padding-left:130px;')
+          ul.nav.navbar-nav
+            li.active
+              a(href='/')
+                | Home
+                span.sr-only (current)
+            li
+             <!-- a(href='/registerpatient') Register Patients--->
+      br
+      p
+        #signupbox.mainbox.col-md-7.col-md-offset-3.col-sm-8.col-sm-offset-2(style='margin-top:50px;')
+          .panel.panel-info
+            .panel-heading
+              .panel-title Edit Patient
+            .panel-body
+              form#signUpform.form-horizontal(action='/patients/update', method='POST', role='form')
+                input#patient_id.form-control(type='hidden', name='patient_id', value="#{patient._id}", placeholder='patient_id', required='true')
+                input#doctor_id.form-control(type='hidden', name='doctor_id', value="#{patient.doctor_id}", placeholder='doctor_id', ,='', required='true')
+                .form-group
+                  label.col-md-4.control-label(for='name') Name
+                  .col-md-8
+                    input#name.form-control(type='text', name='name', value='#{patient.name}', placeholder='Name', required='true')
+                .form-group
+                  label.col-md-4.control-label(for='suffering_from') Suffering From
+                  .col-md-8
+                    input#suffering_from.form-control(type='text', name='suffering_from', value='#{patient.suffering_from}', placeholder='Suffering From', required='true')
+                .form-group
+                  label.col-md-4.control-label(for='personal_contact_number') Personal Contact Number
+                  .col-md-8
+                    input#personal_contact_number.form-control(type='text', name='personal_contact_number', value='#{patient.personal_contact_number}', placeholder='Personal Contact Number', required='true')
+                .form-group
+                  label.col-md-4.control-label(for='emergency_contact_number') Emergency Contact Number
+                  .col-md-8
+                    input#emergency_contact_number.form-control(type='text', name='emergency_contact_number', value='#{patient.emergency_contact_number}', placeholder='Emergency Contact Number', required='true')
+                .form-group
+                  label.col-md-4.control-label(for='email') Email
+                  .col-md-8
+                    input#email.form-control(type='email', name='email', value='#{patient.email}', placeholder='Email', required='true')
+                .form-group
+                  label.col-md-4.control-label(for='Address') Address
+                  .col-md-8
+                    input#address.form-control(type='text', name='address', value='#{patient.address}', placeholder='Address', required='true')
+                .form-group
+                  .col-md-offset-3.col-md-8 
+                    input.btn.btn-sm.btn-primary(type='submit', value='Update')                   
+                    a#btn-back.btn.btn-sm.btn-success(href='/patients', style='margin-left:5px') Back  

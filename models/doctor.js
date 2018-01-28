@@ -25,8 +25,8 @@ const doctorSchema = mongoose.Schema({
 const Doctor = module.exports = mongoose.model('doctor', doctorSchema);
 
 module.exports.addDoctor = (doctor, callback) => {
-    console.log("Comming here in addDoctor....")
-    console.log(doctor);
+    //console.log("Comming here in addDoctor....")
+    //console.log(doctor);
     Doctor.create(doctor, callback);
 }
 
